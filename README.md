@@ -1,12 +1,12 @@
 ![portada](https://github.com/Gilgammesh/graphql-apollo-api/blob/master/public/img/portada.png)
 
-> El Proyecto es un modelo base de una GraphQL API.
+> El Proyecto es un modelo base de una GraphQL Apollo API.
 
 > Que puede ser consumida en cualquier FrontEnd como: React, Angular o Vue.
 
 > Esta desarrollada en un servidor NodeJs y framework Express.
 
-> Libreria de GraphQL, con modularizacion de schemas y resolvers.
+> Libreria de GraphQL framework Apollo, con modularizacion de schemas y resolvers.
 
 > Conexión a una base de datos MongoDb con Mongoose, con modelos de Colecciones. 
 
