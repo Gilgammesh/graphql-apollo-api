@@ -4,7 +4,7 @@
 import { Schema, model } from "mongoose";
 
 /*****************************************************************************************/
-// Definimos el eschema de User //
+// Definimos el schema de User //
 /*****************************************************************************************/
 const userSchema = new Schema({
     firstname: {
@@ -29,6 +29,6 @@ const userSchema = new Schema({
 })
 
 /*****************************************************************************************/
-// Exporamos el model User, usando el schema creado //
+// Exportamos el model User, usando el schema creado //
 /*****************************************************************************************/
 export default model('User', userSchema);

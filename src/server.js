@@ -9,7 +9,6 @@ import cors from "cors";
 import { createServer } from "http";
 import { join } from "path";
 import { ApolloServer } from 'apollo-server-express';
-import expressPlayGround from 'graphql-playground-middleware-express';
 import { connect } from "./database/database";
 import schema from "./graphql/schema";
 import "colors";
@@ -44,13 +43,14 @@ connect();
 /*******************************************************************************************************/
 const server = new ApolloServer({
   schema: schema, // Pasamos el schema al servidor
-  introspection: true, // Habilita instrospeccion de schema (se recomienda deshabilitar en produccion)
+  introspection: true, // Habilita instrospeccion de schema 
   playground: true // Habilita el playground
-});
+}); // En producción se recomienda deshabilitar introspection y playground, poniendolos en false
+// En caso de que manejemos tokens dejamos 
 server.applyMiddleware({ app }); // Conectamos el Servidor de Apollo con la Aplicación
-app.use('/', expressPlayGround({
-  endpoint: '/graphql'
-})); // Para cualquier ruta redireccionamos a nuestro PlayGround
+app.use('/', (req, res, next) => {
+  res.redirect('/'); // Redireccionamos cualquier dirección a nuestra ruta estática
+});
 
 /*******************************************************************************************************/
 // Obtenemos el puerto desde el entorno y almacenamos //
@@ -71,10 +71,10 @@ const httpServer = createServer(app);
 /*******************************************************************************************************/
 // Arrancamos el Servidor de Express
 /*******************************************************************************************************/
-const route = "graphql";
+const graphql = "graphql";
 httpServer.listen(port, () => {
   console.log("**************************************************************".rainbow);
   console.log(app.get("name").magenta.bold);
-  console.log(`🚀  Servidor listo en: `.yellow.bold + `http://localhost:${port}/${route}`.blue.bold);
+  console.log(`🚀  Servidor listo en: `.yellow.bold + `http://localhost:${port}/${graphql}`.blue.bold);
   console.log("**************************************************************".rainbow);
 });

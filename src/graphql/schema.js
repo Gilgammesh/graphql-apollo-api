@@ -25,7 +25,7 @@ const resolversArray = fileLoader(path.join(__dirname, "./resolvers"), {
 const resolvers = mergeResolvers(resolversArray);
 
 /*****************************************************************************************/
-// Creamos el schema de GraphQL y exportamos //
+// Creamos el schema de GraphQL, pasamos los typeDefs y resolvers. Luego exportamos //
 /*****************************************************************************************/
 export default makeExecutableSchema({
   typeDefs: typeDefs,

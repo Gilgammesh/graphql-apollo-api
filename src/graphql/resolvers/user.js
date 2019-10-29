@@ -1,5 +1,5 @@
 /*****************************************************************************************/
-// Añadimos los Imports de los Modelos establecidos //
+// Añadimos los Imports de los Modelos establecidos en la Base de Datos //
 /*****************************************************************************************/
 import User from "../../database/models/User";
 
