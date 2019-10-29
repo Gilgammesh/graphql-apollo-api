@@ -46,7 +46,7 @@ const server = new ApolloServer({
   introspection: true, // Habilita instrospeccion de schema 
   playground: true // Habilita el playground
 }); // En producción se recomienda deshabilitar introspection y playground, poniendolos en false
-// En caso de que manejemos tokens dejamos 
+// En caso de que manejemos tokens dejamos en true
 server.applyMiddleware({ app }); // Conectamos el Servidor de Apollo con la Aplicación
 app.use('/', (req, res, next) => {
   res.redirect('/'); // Redireccionamos cualquier dirección a nuestra ruta estática

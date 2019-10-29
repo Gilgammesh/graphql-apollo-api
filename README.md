@@ -14,8 +14,8 @@
 
 Esta herramienta:
   * Implementa un servidor HTTP rapidamente con Express.
-  * Reduce la complejidad de la implementación de un Servidor Apollo.
-  * Permite usar el playground
+  * Reduce la complejidad de la implementación de un Servidor Apollo GraphQL.
+  * Permite usar el playground de Apollo.
   * Modularizar los archivos typeDef y resolver.
   
 ## Instalación
